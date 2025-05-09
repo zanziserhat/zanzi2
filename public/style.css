@@ -505,8 +505,11 @@ footer {
 
 .color-options {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+  padding-left: 0;
 }
 
 .color-dot {
