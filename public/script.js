@@ -164,7 +164,7 @@ function submitAuth() {
 }
 // Ürünleri dinamik olarak yükle (GÜNCEL HALİ)
 // Ürünleri dışarıda saklayacağız
-declare let allProducts = [];
+let allProducts = [];
 
 fetch("products.json")
   .then(res => res.json())
@@ -237,16 +237,15 @@ document.querySelector(".filter-bar").addEventListener("click", function(e) {
 });
 
 
-    // Renk değiştirme işlevi
-    lookbook.addEventListener('click', function(e){
-      if(e.target.classList.contains('color-dot')){
-        const newImgSrc = e.target.getAttribute('data-img');
-        const sliderContainer = e.target.closest('.product-card').querySelector('.slider');
-        const firstSlideImg = sliderContainer.querySelector('.slide-item img');
-        firstSlideImg.src = newImgSrc;
-      }
-    });
   })
   .catch(err => {
     console.error("Ürünler yüklenemedi:", err);
   });
+document.querySelector(".lookbook").addEventListener('click', function(e){
+  if(e.target.classList.contains('color-dot')){
+    const newImgSrc = e.target.getAttribute('data-img');
+    const sliderContainer = e.target.closest('.product-card').querySelector('.slider');
+    const firstSlideImg = sliderContainer.querySelector('.slide-item img');
+    firstSlideImg.src = newImgSrc;
+  }
+});
