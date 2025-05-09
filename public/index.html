@@ -216,6 +216,11 @@
           </div>
           <p class="price">₺${product.price}</p>
         </div>
+        <div class="color-options">
+  ${product.colors?.map(color => `
+    <span class="color-dot" data-img="${color.image}" style="background-color:${color.color};"></span>
+  `).join("") || ""}
+</div>
       `;
 
       lookbook.appendChild(card);
