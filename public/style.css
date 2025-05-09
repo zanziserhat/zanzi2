@@ -555,3 +555,26 @@ footer {
     display: none;
   }
 }
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  padding: 20px 16px;
+  flex-wrap: wrap;
+}
+
+.filter-bar button {
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.filter-bar button:hover,
+.filter-bar button.active {
+  background: #333;
+  color: white;
+}
