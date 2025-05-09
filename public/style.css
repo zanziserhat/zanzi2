@@ -25,6 +25,8 @@ h1, h2 {
 /* Header */
 header {
   position: fixed;
+  margin-bottom: 0;
+  padding-bottom: 0;
   top: 0;
   width: 100%;
   background: #fff;
@@ -133,7 +135,7 @@ header {
 }
 /* Main */
 main {
-  padding-top: 100px;
+  padding-top: 0px;
 }
 /* Hero */
 .hero {
