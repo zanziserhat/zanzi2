@@ -163,48 +163,79 @@ function submitAuth() {
   alert("Henüz arka uç (backend) hazır değil 🙃");
 }
 // Ürünleri dinamik olarak yükle (GÜNCEL HALİ)
+// Ürünleri dışarıda saklayacağız
+declare let allProducts = [];
+
 fetch("products.json")
   .then(res => res.json())
   .then(products => {
-    const lookbook = document.querySelector(".lookbook");
-    products.forEach(product => {
-      const card = document.createElement("div");
-      card.className = "product-card fade-in visible";
-      card.innerHTML = `
-  <div class="slider-container">
-    ${product.badge ? `<div class="badge">${product.badge}</div>` : ""}
-    <div class="slider" data-offset="0">
-      ${product.images.map(img => `
-        <div class="slide-item">
-          <img src="${img}" alt="${product.title}" loading="lazy">
+    allProducts = products;
+    renderProducts(allProducts);
+  });
+
+function renderProducts(productList) {
+  const lookbook = document.querySelector(".lookbook");
+  lookbook.innerHTML = ""; // Temizle
+
+  productList.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "product-card fade-in visible";
+    card.innerHTML = `
+      <div class="slider-container">
+        ${product.badge ? `<div class="badge">${product.badge}</div>` : ""}
+        <div class="slider" data-offset="0">
+          ${product.images.map(img => `
+            <div class="slide-item">
+              <img src="${img}" alt="${product.title}" loading="lazy">
+            </div>
+          `).join("")}
         </div>
-      `).join("")}
-    </div>
-    <button class="prev" onclick="slidePrev(this)">‹</button>
-    <button class="next" onclick="slideNext(this)">›</button>
-  </div>
-  <div class="product-info">
-    <div class="info-top">
-      <a href="${product.url}"><h2>${product.title}</h2></a>
-      <div class="favorite-icon" onclick="toggleFavorite(this)">
-        <svg viewBox="0 0 24 24" class="heart" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
-          2 6.5 3.5 5 5.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99
-          14.96 5 16.5 5 18.5 5 20 6.5 20 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-          fill="none" stroke="#333" stroke-width="2"/>
-        </svg>
+        <button class="prev" onclick="slidePrev(this)">‹</button>
+        <button class="next" onclick="slideNext(this)">›</button>
       </div>
-    </div>
-    <p class="price">₺${product.price}</p>
-  </div>
-  <div class="color-options">
-    ${product.colors?.map(color => `
-      <span class="color-dot" data-img="${color.image}" style="background-color:${color.color};"></span>
-    `).join("") || ""}
-  </div>
-`;
-      lookbook.appendChild(card);
-    });
+      <div class="product-info">
+        <div class="info-top">
+          <a href="${product.url}"><h2>${product.title}</h2></a>
+          <div class="favorite-icon" onclick="toggleFavorite(this)">
+            <svg viewBox="0 0 24 24" class="heart" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+              2 6.5 3.5 5 5.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99
+              14.96 5 16.5 5 18.5 5 20 6.5 20 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              fill="none" stroke="#333" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <p class="price">₺${product.price}</p>
+      </div>
+      <div class="color-options">
+        ${product.colors?.map(color => `
+          <span class="color-dot" data-img="${color.image}" style="background-color:${color.color};"></span>
+        `).join("") || ""}
+      </div>
+    `;
+    lookbook.appendChild(card);
+  });
+}
+
+// Filtre butonları tıklanınca çalışır
+document.querySelector(".filter-bar").addEventListener("click", function(e) {
+  if (e.target.tagName === "BUTTON") {
+    document.querySelectorAll(".filter-bar button").forEach(btn => btn.classList.remove("active"));
+    e.target.classList.add("active");
+
+    const selectedColor = e.target.getAttribute("data-color");
+
+    if (selectedColor === "all") {
+      renderProducts(allProducts);
+    } else {
+      const filtered = allProducts.filter(product =>
+        product.colors?.some(c => c.color.toLowerCase() === selectedColor.toLowerCase())
+      );
+      renderProducts(filtered);
+    }
+  }
+});
+
 
     // Renk değiştirme işlevi
     lookbook.addEventListener('click', function(e){
