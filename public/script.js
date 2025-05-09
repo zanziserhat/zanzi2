@@ -5,7 +5,7 @@ function toggleMenu() {
   var body = document.querySelector('main');
   var hamburger = document.querySelector('.hamburger');
   menu.classList.toggle("show-menu");
-  overlay.classList.toggle("show"); // Overlay'ı da aç/kapat
+  overlay.classList.toggle("show");
   body.classList.toggle("blurred");
   hamburger.classList.toggle("active");
 }
@@ -166,17 +166,21 @@ function submitAuth() {
 // Ürünleri dışarıda saklayacağız
 let allProducts = [];
 
+let allProducts = [];
+
 fetch("products.json")
   .then(res => res.json())
   .then(products => {
     allProducts = products;
     renderProducts(allProducts);
+  })
+  .catch(err => {
+    console.error("Ürünler yüklenemedi:", err);
   });
 
 function renderProducts(productList) {
   const lookbook = document.querySelector(".lookbook");
-  lookbook.innerHTML = ""; // Temizle
-
+  lookbook.innerHTML = "";
   productList.forEach(product => {
     const card = document.createElement("div");
     card.className = "product-card fade-in visible";
@@ -217,31 +221,28 @@ function renderProducts(productList) {
   });
 }
 
-// Filtre butonları tıklanınca çalışır
-document.querySelector(".filter-bar").addEventListener("click", function(e) {
-  if (e.target.tagName === "BUTTON") {
-    document.querySelectorAll(".filter-bar button").forEach(btn => btn.classList.remove("active"));
-    e.target.classList.add("active");
-
-    const selectedColor = e.target.getAttribute("data-color");
-
-    if (selectedColor === "all") {
-      renderProducts(allProducts);
-    } else {
-      const filtered = allProducts.filter(product =>
-        product.colors?.some(c => c.color.toLowerCase() === selectedColor.toLowerCase())
-      );
-      renderProducts(filtered);
+// Filtre butonları
+const filterBar = document.querySelector(".filter-bar");
+if (filterBar) {
+  filterBar.addEventListener("click", function(e) {
+    if (e.target.tagName === "BUTTON") {
+      document.querySelectorAll(".filter-bar button").forEach(btn => btn.classList.remove("active"));
+      e.target.classList.add("active");
+      const selectedColor = e.target.getAttribute("data-color");
+      if (selectedColor === "all") {
+        renderProducts(allProducts);
+      } else {
+        const filtered = allProducts.filter(product =>
+          product.colors?.some(c => c.color.toLowerCase() === selectedColor.toLowerCase())
+        );
+        renderProducts(filtered);
+      }
     }
-  }
-});
-
-
-  })
-  .catch(err => {
-    console.error("Ürünler yüklenemedi:", err);
   });
-document.querySelector(".lookbook").addEventListener('click', function(e){
+}
+
+// Renkli butonla resim değiştirme
+document.addEventListener('click', function(e){
   if(e.target.classList.contains('color-dot')){
     const newImgSrc = e.target.getAttribute('data-img');
     const sliderContainer = e.target.closest('.product-card').querySelector('.slider');
@@ -249,3 +250,4 @@ document.querySelector(".lookbook").addEventListener('click', function(e){
     firstSlideImg.src = newImgSrc;
   }
 });
+
