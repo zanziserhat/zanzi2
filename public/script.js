@@ -164,7 +164,7 @@ function submitAuth() {
 }
 // Ürünleri dinamik olarak yükle (GÜNCEL HALİ)
 // Ürünleri dışarıda saklayacağız
-let allProducts = [];
+
 
 let allProducts = [];
 
