@@ -294,7 +294,7 @@ footer {
 }
 @media (max-width: 768px) {
   .logo {
-    font-size: 20px; /* veya istediğin başka bir küçük boyut */
+    font-size: 36px; /* veya istediğin başka bir küçük boyut */
   }
 }
 @media (max-width: 768px) {
