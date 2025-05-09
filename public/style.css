@@ -534,4 +534,8 @@ footer {
   border: 1px solid #333;
   transform: scale(1.1);
 }
-
+@media (max-width: 768px) {
+  .prev, .next {
+    display: none;
+  }
+}
