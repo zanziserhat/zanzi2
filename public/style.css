@@ -25,17 +25,16 @@ h1, h2 {
 /* Header */
 header {
   position: fixed;
-  margin-bottom: 0;
-  padding-bottom: 0;
   top: 0;
   width: 100%;
   background: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* ← Sola logo, sağa "Giriş Yap" */
-  padding: 6px 20px;
-  border-bottom: 0px solid #eee;
+  justify-content: space-between;
+  padding: 4px 16px; /* inceltildi */
+  border-bottom: 1px solid #eee;
   z-index: 999;
+  height: auto;
 }
 .header-left {
   display: flex;
@@ -49,8 +48,10 @@ header {
 }
 .logo {
   font-family: 'Northwood High', serif;
-  text-transform: lowercase; /* Metni küçük harf yapar */
-  font-size: 60px; /* Burayı büyütebilirsin, örneğin 48px yap */
+  text-transform: lowercase;
+  font-size: 48px;
+  line-height: 1;
+  margin: 0;
 }
 }
 /* Hamburger Menu */
@@ -135,7 +136,7 @@ header {
 }
 /* Main */
 main {
-  padding-top: 0px;
+  padding-top: 80px; /* header yüksekliği kadar boşluk bırakıldı */
 }
 /* Hero */
 .hero {
@@ -149,6 +150,8 @@ main {
 }
 /* Lookbook */
 .lookbook {
+  margin-top: 0;
+  padding-top: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 1px;
