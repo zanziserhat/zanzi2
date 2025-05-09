@@ -162,7 +162,7 @@ function toggleAuthMode() {
 function submitAuth() {
   alert("Henüz arka uç (backend) hazır değil 🙃");
 }
-// Ürünleri dinamik olarak yükle
+// Ürünleri dinamik olarak yükle (GÜNCEL HALİ)
 fetch("products.json")
   .then(res => res.json())
   .then(products => {
@@ -170,6 +170,7 @@ fetch("products.json")
     products.forEach(product => {
       const card = document.createElement("div");
       card.className = "product-card fade-in visible";
+
       card.innerHTML = `
         <div class="slider-container">
           ${product.badge ? `<div class="badge">${product.badge}</div>` : ""}
@@ -182,6 +183,11 @@ fetch("products.json")
           </div>
           <button class="prev" onclick="slidePrev(this)">‹</button>
           <button class="next" onclick="slideNext(this)">›</button>
+        </div>
+        <div class="color-options">
+          ${product.colors.map(color => `
+            <span class="color-dot" data-img="${color.image}" style="background-color:${color.color};"></span>
+          `).join("")}
         </div>
         <div class="product-info">
           <div class="info-top">
@@ -198,9 +204,19 @@ fetch("products.json")
           <p class="price">₺${product.price}</p>
         </div>
       `;
+
       lookbook.appendChild(card);
     });
-  })
+
+    // Renk değiştirme işlevi
+    lookbook.addEventListener('click', function(e){
+      if(e.target.classList.contains('color-dot')){
+        const newImgSrc = e.target.getAttribute('data-img');
+        const sliderContainer = e.target.closest('.product-card').querySelector('.slider');
+        const firstSlideImg = sliderContainer.querySelector('.slide-item img');
+        firstSlideImg.src = newImgSrc;
+      }
+    });
   .catch(err => {
     console.error("Ürünler yüklenemedi:", err);
   });
