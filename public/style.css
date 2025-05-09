@@ -32,7 +32,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 4px 16px; /* inceltildi */
-  border-bottom: 1px solid #eee;
+  border-bottom: 0px solid #eee;
   z-index: 999;
   height: auto;
 }
@@ -155,7 +155,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 1px;
-  row-gap: 80px;
+  row-gap: 60px;
   padding: 1px;
 }
 /* Slider yapısı */
