@@ -172,10 +172,8 @@ main {
   height: 100%;
   display: flex;
   transition: transform 0.5s ease;
-  overflow-x: auto; /* parmakla kaydırma için gerekli */
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
 }
+
 .slide-item {
   flex: 0 0 100%;
   scroll-snap-align: start;
@@ -536,6 +534,24 @@ footer {
 }
 @media (max-width: 768px) {
   .prev, .next {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .slider {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    transform: none !important; /* JS'in transformunu iptal et */
+  }
+
+  .slide-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  .prev,
+  .next {
     display: none;
   }
 }
