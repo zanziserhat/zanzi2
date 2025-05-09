@@ -170,7 +170,6 @@ fetch("products.json")
     products.forEach(product => {
       const card = document.createElement("div");
       card.className = "product-card fade-in visible";
-
       card.innerHTML = `
         <div class="slider-container">
           ${product.badge ? `<div class="badge">${product.badge}</div>` : ""}
@@ -185,9 +184,9 @@ fetch("products.json")
           <button class="next" onclick="slideNext(this)">›</button>
         </div>
         <div class="color-options">
-          ${product.colors.map(color => `
+          ${product.colors?.map(color => `
             <span class="color-dot" data-img="${color.image}" style="background-color:${color.color};"></span>
-          `).join("")}
+          `).join("") || ""}
         </div>
         <div class="product-info">
           <div class="info-top">
@@ -204,7 +203,6 @@ fetch("products.json")
           <p class="price">₺${product.price}</p>
         </div>
       `;
-
       lookbook.appendChild(card);
     });
 
@@ -217,6 +215,7 @@ fetch("products.json")
         firstSlideImg.src = newImgSrc;
       }
     });
+  })
   .catch(err => {
     console.error("Ürünler yüklenemedi:", err);
   });
