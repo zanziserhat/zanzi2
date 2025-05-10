@@ -1,6 +1,7 @@
 [
   {
     "title": "20344399 Beyaz Elbise",
+    "tags": ["elbise", "yazlık", "keten"]
     "price": 1299,
     "url": "beyaz.html",
     "images": [
@@ -30,6 +31,7 @@
   },
   {
     "title": "20515014 Bitter Elbise",
+    "tags": ["elbise", "yazlık", ]
     "price": 1199,
     "url": "bitter.html",
     "images": [
@@ -48,6 +50,7 @@
   },
   {
     "title": "21456405 Oranj Bluz",
+    "tags": ["bluz", "yazlık", "saten"]
     "price": 899,
     "url": "19Oranj1.html",
     "images": [
@@ -56,6 +59,7 @@
   },
   {
     "title": "20816405 Pembe Saten Bluz",
+    "tags": ["bluz", "yazlık", "saten"]
     "price": 899,
     "url": "20Pembeparlak.html",
     "images": [
@@ -66,6 +70,7 @@
   },
   {
     "title": "21285046 Tencel Takım",
+    "tags": ["takım", "yazlık", "tencel"]
     "price": 1899,
     "url": "21TencelTakım.html",
     "images": [
@@ -74,6 +79,7 @@
   },
   {
     "title": "21284356 Çiçek Detaylı Elbise",
+    "tags": ["elbise", "yazlık", "keten"]
     "price": 1399,
     "url": "23Ciceksarı.html",
     "images": [
@@ -101,6 +107,7 @@
   },
   {
     "title": "21284376 Yesil Viskon Elbise",
+    "tags": ["elbise", "yazlık", "viskon"]
     "price": 999,
     "url": "24Yesil1.html",
     "images": [
@@ -110,6 +117,7 @@
   },
   {
     "title": "20395096 Taba Kaftan",
+    "tags": ["kaftan", "yazlık", "keten"]
     "price": 1299,
     "url": "25Kaftan.html",
     "images": [
@@ -118,6 +126,7 @@
   },
   {
     "title": "20414426 Kahve Elbise",
+    "tags": ["elbise", "yazlık", "keten"]
     "price": 899,
     "url": "kahve.html",
     "images": [
