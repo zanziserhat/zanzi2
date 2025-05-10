@@ -228,12 +228,14 @@ if (filterBar) {
     if (e.target.tagName === "BUTTON") {
       document.querySelectorAll(".filter-bar button").forEach(btn => btn.classList.remove("active"));
       e.target.classList.add("active");
-      const selectedColor = e.target.getAttribute("data-color");
-      if (selectedColor === "all") {
+
+      const selectedTag = e.target.getAttribute("data-tag");
+
+      if (selectedTag === "all") {
         renderProducts(allProducts);
       } else {
         const filtered = allProducts.filter(product =>
-          product.colors?.some(c => c.color.toLowerCase() === selectedColor.toLowerCase())
+          product.tags?.includes(selectedTag)
         );
         renderProducts(filtered);
       }
