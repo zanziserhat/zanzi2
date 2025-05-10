@@ -1,0 +1,174 @@
+[
+  {
+    "title": "20344399 Beyaz Elbise",
+    "tags": [
+      "elbise",
+      "yazlık",
+      "keten"
+    ],
+    "price": 1299,
+    "url": "beyaz.html",
+    "images": [
+      "images/beyaz1.jpg",
+      "images/beyaz2.jpg",
+      "images/beyaz3.jpg"
+    ],
+    "badge": "Yeni",
+    "colors": [
+      {
+        "color": "#b49a7e",
+        "image": "images/kahve1.jpg"
+      },
+      {
+        "color": "#000000",
+        "image": "images/siyah1.jpg"
+      },
+      {
+        "color": "#f1e4d3",
+        "image": "images/beyaz1.jpg"
+      },
+      {
+        "color": "#d7d9de",
+        "image": "images/mavi1.jpg"
+      }
+    ]
+  },
+  {
+    "title": "20515014 Bitter Elbise",
+    "tags": [
+      "elbise",
+      "yazlık"
+    ],
+    "price": 1199,
+    "url": "bitter.html",
+    "images": [
+      "images/bitter1.jpg"
+    ],
+    "badge": "İndirim"
+  },
+  {
+    "title": "21287078 Ceket Takımı",
+    "price": 1799,
+    "url": "ceket.html",
+    "images": [
+      "images/ceket1.jpg",
+      "images/ceket2.jpg"
+    ]
+  },
+  {
+    "title": "21456405 Oranj Bluz",
+    "tags": [
+      "bluz",
+      "yazlık",
+      "saten"
+    ],
+    "price": 899,
+    "url": "19Oranj1.html",
+    "images": [
+      "images/19Oranj1.jpg"
+    ]
+  },
+  {
+    "title": "20816405 Pembe Saten Bluz",
+    "tags": [
+      "bluz",
+      "yazlık",
+      "saten"
+    ],
+    "price": 899,
+    "url": "20Pembeparlak.html",
+    "images": [
+      "images/20Pembeparlak.jpg",
+      "images/20Pembeparlak2.jpg",
+      "images/20Pembeparlak3.jpg"
+    ]
+  },
+  {
+    "title": "21285046 Tencel Takım",
+    "tags": [
+      "takım",
+      "yazlık",
+      "tencel"
+    ],
+    "price": 1899,
+    "url": "21TencelTakım.html",
+    "images": [
+      "images/21TencelTakım.jpg"
+    ]
+  },
+  {
+    "title": "21284356 Çiçek Detaylı Elbise",
+    "tags": [
+      "elbise",
+      "yazlık",
+      "keten"
+    ],
+    "price": 1399,
+    "url": "23Ciceksarı.html",
+    "images": [
+      "images/23Ciceksarı.jpg"
+    ],
+    "badge": "Yeni",
+    "colors": [
+      {
+        "color": "#FFFF00",
+        "image": "images/23Ciceksarı.jpg"
+      },
+      {
+        "color": "#301e14",
+        "image": "images/23Cicekkahve.jpg"
+      },
+      {
+        "color": "#c8a2c8",
+        "image": "images/23Ciceklila.jpg"
+      },
+      {
+        "color": "#02a4d3",
+        "image": "images/23Cicekmavi.jpg"
+      }
+    ]
+  },
+  {
+    "title": "21284376 Yesil Viskon Elbise",
+    "tags": [
+      "elbise",
+      "yazlık",
+      "viskon"
+    ],
+    "price": 999,
+    "url": "24Yesil1.html",
+    "images": [
+      "images/24Yesil1.jpg"
+    ],
+    "badge": "İndirim"
+  },
+  {
+    "title": "20395096 Taba Kaftan",
+    "tags": [
+      "kaftan",
+      "yazlık",
+      "keten"
+    ],
+    "price": 1299,
+    "url": "25Kaftan.html",
+    "images": [
+      "images/25Kaftan.jpg"
+    ]
+  },
+  {
+    "title": "20414426 Kahve Elbise",
+    "tags": [
+      "elbise",
+      "yazlık",
+      "keten"
+    ],
+    "price": 899,
+    "url": "kahve.html",
+    "images": [
+      "images/kahve1.jpg",
+      "images/kahve2.jpg",
+      "images/kahve3.jpg"
+    ],
+    "badge": "Yeni"
+  }
+]
