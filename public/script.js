@@ -235,7 +235,7 @@ if (filterBar) {
         renderProducts(allProducts);
       } else {
         const filtered = allProducts.filter(product =>
-          product.tags?.includes(selectedTag)
+         Array.isArray(product.tags) && product.tags.includes(selectedTag)
         );
         renderProducts(filtered);
       }
