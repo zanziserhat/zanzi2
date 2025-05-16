@@ -136,7 +136,7 @@ header {
 }
 /* Main */
 main {
-  padding-top: 80px; /* header yüksekliği kadar boşluk bırakıldı */
+  padding-top: 40px; /* header yüksekliği kadar boşluk bırakıldı */
 }
 /* Hero */
 .hero {
